@@ -93,14 +93,18 @@ class Menu {
                 System.out.println("debut");
                 //test.damage(player, player2);
                 boolean turn = true;
+                int counter = 1;
 
                 while (turn) {
                     if(player.life <= 0 || player2.life <= 0) {
                         turn = false;
                         System.out.println("fin du figth");
                     }else {
+                        System.out.println(" ");
+                        System.out.println("Turn n°" + counter + " :");
                         test.damage(player, player2);
                     }
+                    counter++;
                 }
 
             }else {
