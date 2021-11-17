@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -23,6 +25,7 @@ class Menu {
     }
 
     void condition() {
+        List stock = new ArrayList();
         System.out.println(" ");
         System.out.println("Entrez le nombre en question : ");
         Scanner condition = new Scanner(System.in);
@@ -47,18 +50,33 @@ class Menu {
                 Character player = new Character();
                 player.caracteristics();
                 System.out.println(player);
+                stock.add(player.name);
+                stock.add(player.damage);
+                stock.add(player.life);
+                stock.add(player.initiative);
 
                 DefaultCharacter playerDefault = new DefaultCharacter();
                 System.out.println(playerDefault);
+                stock.add(playerDefault.nameDefault);
+                stock.add(playerDefault.damageDefault);
+                stock.add(playerDefault.lifeDefault);
+                stock.add(playerDefault.initiativeDefault);
 
             }else if (number2 == 2) {
                 Character player = new Character();
                 player.caracteristics();
-                System.out.println(player);
+                stock.add(player.name);
+                stock.add(player.damage);
+                stock.add(player.life);
+                stock.add(player.initiative);
 
                 Character player2 = new Character();
                 player2.caracteristics();
                 System.out.println(player2);
+                stock.add(player2.name);
+                stock.add(player2.damage);
+                stock.add(player2.life);
+                stock.add(player2.initiative);
 
             }else {
                 System.out.println("This mode doesn't exist");
