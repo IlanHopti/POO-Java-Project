@@ -65,10 +65,10 @@ class Menu {
 
                 System.out.println("Player 1 : "+ player);
                 System.out.println("Player 2 :" + playerDefault);
-                Fight test = new Fight();
-
 
             }else if (number2 == 2) {
+                Fight test = new Fight();
+
                 Character player = new Character();
                 System.out.println(" ");
                 System.out.println("Player 1 :");
@@ -89,9 +89,34 @@ class Menu {
 
                 System.out.println("Player 1 : " + player);
                 System.out.println("Player 2 : " + player2);
-                System.out.println(" ");
 
-                /////////////////////////////////////////////////////////////////
+                System.out.println(" ");
+                System.out.println("Begin of the Fight");
+
+                boolean turn = true;
+                int counter = 1;
+
+                while (turn) {
+                    if(player.life <= 0) {
+                        turn = false;
+                        System.out.println(" ");
+                        System.out.println("The winner is " + player2.name);
+                    }else if(player2.life <= 0) {
+                        turn = false;
+                        System.out.println(" ");
+                        System.out.println("The winner is " + player.name);
+                    }else {
+                        System.out.println(" ");
+                        System.out.println("Turn n°" + counter + " :");
+                        test.damage(player, player2);
+                    }
+                    counter++;
+                }
+
+                System.out.println(" ");
+                System.out.println("End of the Fight");
+
+                ////////////////////////////////////////////
 
                 System.out.println("Chose your character");
                 System.out.println("1 : Warrior");
@@ -111,13 +136,16 @@ class Menu {
 
                 }
 
-
             }else {
                 System.out.println("This mode doesn't exist");
+                condition();
+                tellMe();
             }
 
         }else {
             System.out.println("This feature doesn't exist");
+            condition();
+            tellMe();
         }
     }
 }

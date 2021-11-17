@@ -61,13 +61,13 @@ class DefaultCharacter extends Character{
     }
 }
 
-class Warrior extends Character {
+class Warrior extends Character{
 
 }
-class Wizard extends Character {
+class Wizard extends Character{
 
 }
 
-class Thief extends Character {
+class Thief extends Character{
 
 }
