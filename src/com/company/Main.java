@@ -45,7 +45,7 @@ class Menu {
             Scanner condition2 = new Scanner(System.in);
             int number2 = condition2.nextInt();
 
-            if (number2 == 1) {
+            if (number2 == 1) {         // Player VS AI
 
                 Character player = new Character();
                 player.caracteristics();
@@ -53,8 +53,8 @@ class Menu {
 
                 DefaultCharacter playerDefault = new DefaultCharacter();
                 System.out.println(playerDefault);
-
-            }else if (number2 == 2) {
+                
+            }else if (number2 == 2) {   // Player vs Player
 
                 Character player = new Character();
                 player.caracteristics();
