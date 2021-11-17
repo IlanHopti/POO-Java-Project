@@ -34,6 +34,7 @@ class Character {
         Scanner initiaves = new Scanner(System.in);
         initiative = initiaves.nextInt();
 
+
     }
 
     public String toString() {
@@ -41,4 +42,3 @@ class Character {
                 + " damage's points, he has " + life + " life's points and he has " + initiative + " initiative's points";
     }
 }
-
