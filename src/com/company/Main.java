@@ -65,6 +65,9 @@ class Menu {
 
                 System.out.println("Player 1 : "+ player);
                 System.out.println("Player 2 :" + playerDefault);
+                Fight test = new Fight();
+                test.damage(player, playerDefault);
+                
 
             }else if (number2 == 2) {
                 Character player = new Character();
@@ -87,6 +90,8 @@ class Menu {
 
                 System.out.println("Player 1 : " + player);
                 System.out.println("Player 2 : " + player2);
+                Fight test = new Fight();
+                test.damage(player, player2);
 
             }else {
                 System.out.println("This mode doesn't exist");

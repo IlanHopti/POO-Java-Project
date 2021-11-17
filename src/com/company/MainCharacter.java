@@ -41,7 +41,7 @@ class Character {
     }
 }
 
-class DefaultCharacter {
+class DefaultCharacter extends Character{
 
     String nameDefault = "AI";
     int damageDefault = 10;
