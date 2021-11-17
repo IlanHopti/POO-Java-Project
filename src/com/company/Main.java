@@ -65,11 +65,10 @@ class Menu {
 
                 System.out.println("Player 1 : "+ player);
                 System.out.println("Player 2 :" + playerDefault);
-                Fight test = new Fight();
-                test.damage(player, playerDefault);
-                
 
             }else if (number2 == 2) {
+                Fight test = new Fight();
+
                 Character player = new Character();
                 System.out.println(" ");
                 System.out.println("Player 1 :");
@@ -90,15 +89,30 @@ class Menu {
 
                 System.out.println("Player 1 : " + player);
                 System.out.println("Player 2 : " + player2);
-                Fight test = new Fight();
-                test.damage(player, player2);
+
+                System.out.println("debut");
+                //test.damage(player, player2);
+                boolean turn = true;
+
+                while (turn) {
+                    if(player.life <= 0 || player2.life <= 0) {
+                        turn = false;
+                        System.out.println("fin du figth");
+                    }else {
+                        test.damage(player, player2);
+                    }
+                }
 
             }else {
                 System.out.println("This mode doesn't exist");
+                condition();
+                tellMe();
             }
 
         }else {
             System.out.println("This feature doesn't exist");
+            condition();
+            tellMe();
         }
     }
 }
