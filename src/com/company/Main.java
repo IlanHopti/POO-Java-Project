@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Application has started");
-        System.out.println(" ");
 
         Menu begin = new Menu();
         begin.tellMe();
@@ -18,25 +17,28 @@ public class Main {
 class Menu {
 
     void tellMe() {
+        System.out.println(" ");
         System.out.println("Chose");
         System.out.println("1. Quit");
         System.out.println("2. Continue");
-        System.out.println("3. ...");
     }
 
     void condition() {
+        System.out.println(" ");
         System.out.println("Entrez le nombre en question : ");
         Scanner condition = new Scanner(System.in);
         int number = condition.nextInt();
 
         if(number == 1) {
-            System.out.println("Le jeu s'arrête");
+            System.out.println("The game stop");
         }else if(number == 2) {
-            System.out.println("Le jeu continue");
+            System.out.println("The game continue");
+            Character player = new Character();
+            player.caracteristics();
+            System.out.println(player);
         }else {
-            System.out.println("Cette fonctionnalité n'existe pas");
+            System.out.println("This feature doesn't exist");
         }
     }
 
 }
-
