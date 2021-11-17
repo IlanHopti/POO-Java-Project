@@ -36,7 +36,7 @@ class Character {
     }
 
     public String toString() {
-        return "Your player is " + name + ", he inflict " + damage
+        return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points and he has " + initiative + " initiative's points";
     }
 }
