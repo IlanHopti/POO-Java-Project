@@ -33,6 +33,8 @@ class Menu {
             System.out.println("The game stop");
         }else if(number == 2) {
             System.out.println("The game continue");
+            Character player = new Character();
+            player.caracteristics();
         }else {
             System.out.println("This feature doesn't exist");
         }
