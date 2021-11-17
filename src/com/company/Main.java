@@ -35,6 +35,7 @@ class Menu {
             System.out.println("The game continue");
             Character player = new Character();
             player.caracteristics();
+            System.out.println(player);
         }else {
             System.out.println("This feature doesn't exist");
         }
