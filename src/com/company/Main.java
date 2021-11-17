@@ -23,18 +23,15 @@ class Menu {
     }
 
     void condition() {
-
         System.out.println(" ");
         System.out.println("Entrez le nombre en question : ");
         Scanner condition = new Scanner(System.in);
         int number = condition.nextInt();
 
         if(number == 1) {
-
             System.out.println("The game stop");
 
         }else if(number == 2) {
-
             System.out.println("The game continue");
 
             System.out.println(" ");
@@ -55,7 +52,6 @@ class Menu {
                 System.out.println(playerDefault);
 
             }else if (number2 == 2) {
-
                 Character player = new Character();
                 player.caracteristics();
                 System.out.println(player);
@@ -65,15 +61,11 @@ class Menu {
                 System.out.println(player2);
 
             }else {
-
                 System.out.println("This mode doesn't exist");
-
             }
 
         }else {
-
             System.out.println("This feature doesn't exist");
-
         }
     }
 }
