@@ -60,3 +60,14 @@ class DefaultCharacter extends Character{
                 + " damage's points, he has " + lifeDefault + " life's points and he has " + initiativeDefault + " initiative's points";
     }
 }
+
+class Warrior extends Character {
+
+}
+class Wizard extends Character {
+
+}
+
+class Thief extends Character {
+
+}
