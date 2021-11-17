@@ -116,6 +116,26 @@ class Menu {
                 System.out.println(" ");
                 System.out.println("End of the Fight");
 
+                ////////////////////////////////////////////
+
+                System.out.println("Chose your character");
+                System.out.println("1 : Warrior");
+                System.out.println("2 : Wizard");
+                System.out.println("3 : Thief");
+                Scanner choseCharacter = new Scanner(System.in);
+                int answer = choseCharacter.nextInt();
+
+                if (answer == 1) {
+                    Warrior warrior = new Warrior();
+
+                }else if (answer == 2) {
+                    Wizard wizard = new Wizard();
+
+                }else if (answer == 3) {
+                    Thief thief = new Thief();
+
+                }
+
             }else {
                 System.out.println("This mode doesn't exist");
                 condition();
