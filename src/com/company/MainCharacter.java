@@ -18,7 +18,7 @@ class Character {
 
     void caracteristics() {
 
-        System.out.println("Enter yout name : ");
+        System.out.println("Enter your name : ");
         Scanner nom = new Scanner(System.in);
         name = nom.nextLine();
 
@@ -33,12 +33,30 @@ class Character {
         System.out.println("Enter your initiative's points : ");
         Scanner initiaves = new Scanner(System.in);
         initiative = initiaves.nextInt();
-
-
     }
 
     public String toString() {
         return "Your player is " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points and he has " + initiative + " initiative's points";
+    }
+}
+
+class DefaultCharacter {
+
+    String nameDefault = "AI";
+    int damageDefault = 10;
+    int lifeDefault = 100;
+    int initiativeDefault = 2;
+
+    public DefaultCharacter() {
+        this.nameDefault = nameDefault;
+        this.damageDefault = damageDefault;
+        this.lifeDefault = lifeDefault;
+        this.initiativeDefault = initiativeDefault;
+    }
+
+    public String toString() {
+        return "The AI player is " + nameDefault + ", he inflict " + damageDefault
+                + " damage's points, he has " + lifeDefault + " life's points and he has " + initiativeDefault + " initiative's points";
     }
 }
