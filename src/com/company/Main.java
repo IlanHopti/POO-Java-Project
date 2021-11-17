@@ -90,15 +90,21 @@ class Menu {
                 System.out.println("Player 1 : " + player);
                 System.out.println("Player 2 : " + player2);
 
-                System.out.println("debut");
-                //test.damage(player, player2);
+                System.out.println(" ");
+                System.out.println("Begin of the Fight");
+
                 boolean turn = true;
                 int counter = 1;
 
                 while (turn) {
-                    if(player.life <= 0 || player2.life <= 0) {
+                    if(player.life <= 0) {
                         turn = false;
-                        System.out.println("fin du figth");
+                        System.out.println(" ");
+                        System.out.println("The winner is " + player2.name);
+                    }else if(player2.life <= 0) {
+                        turn = false;
+                        System.out.println(" ");
+                        System.out.println("The winner is " + player.name);
                     }else {
                         System.out.println(" ");
                         System.out.println("Turn n°" + counter + " :");
@@ -106,6 +112,9 @@ class Menu {
                     }
                     counter++;
                 }
+
+                System.out.println(" ");
+                System.out.println("End of the Fight");
 
             }else {
                 System.out.println("This mode doesn't exist");
