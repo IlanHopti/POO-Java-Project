@@ -8,13 +8,14 @@ class Character {
     int damage;
     int life;
     int initiative;
-    int sheald;
+    int sheald =15;
 
     public Character() {
         this.name = name;
         this.damage = damage;
         this.life = life;
         this.initiative = initiative;
+
     }
 
     void caracteristics() {
@@ -36,16 +37,20 @@ class Character {
         initiative = initiaves.nextInt();
     }
 
+    void tellMe() {
+        System.out.println("Perso claqué");
+    }
+
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points and he has " + initiative + " initiative's points";
     }
 
-    public void warriorCapacity() {
-        System.out.println("Enter your sheald's points : ");
-        Scanner bouclier = new Scanner(System.in);
-        sheald = bouclier.nextInt();
-    }
+//    public void warriorCapacity() {
+//        System.out.println("Enter your sheald's points : ");
+//        Scanner bouclier = new Scanner(System.in);
+//        sheald = bouclier.nextInt();
+//    }
 }
 
 class DefaultCharacter extends Character{
@@ -68,26 +73,30 @@ class DefaultCharacter extends Character{
     }
 }
 
-class Warrior extends Character {
-
-    public Warrior() {
-        this.sheald = sheald;
-    }
-
-//    void zcapacity() {
-//        System.out.println("Enter your damage's points : ");
-//        Scanner bouclier = new Scanner(System.in);
-//        sheald = bouclier.nextInt();
-//    }
+class Warrior extends Character{
 
     void tellMe() {
         System.out.println("possède un bouclier qui réduit les dégâts infligés d'une valeur constante");
     }
+
+    public String toString() {
+        return "The AI player is " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points and he has " + initiative + " initiative's points and " + sheald + " sheald and he is a warrior";
+    }
 }
+
 class Wizard extends Character{
 
+    void tellMe() {
+        System.out.println("inflige des dégâts magiques se rajoutant aux dégâts de base, " +
+                "mais ces dégâts magiques réduisent de moitié après chaque attaque");
+    }
 }
 
 class Thief extends Character{
 
+    void tellMe() {
+        System.out.println("possède une probabilité d'esquiver totalement une attaque, " +
+                "et possède également une probabilité d'infliger un coup critique qui doublera les dégâts de base");
+    }
 }

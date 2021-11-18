@@ -48,7 +48,7 @@ class Menu {
             int number2 = condition2.nextInt();
 
             if (number2 == 1) {
-                Character player = new Character();
+                Warrior player = new Warrior();
                 System.out.println(" ");
                 System.out.println("Player 1 :");
                 player.caracteristics();
@@ -56,6 +56,7 @@ class Menu {
                 stock.add(player.damage);
                 stock.add(player.life);
                 stock.add(player.initiative);
+                player.tellMe();
 
                 DefaultCharacter playerDefault = new DefaultCharacter();
                 stock.add(playerDefault.nameDefault);
@@ -70,6 +71,24 @@ class Menu {
                 Fight test = new Fight();
 
                 Character player = new Character();
+
+                System.out.println("Chose your character");
+                System.out.println("1 : Warrior");
+                System.out.println("2 : Wizard");
+                System.out.println("3 : Thief");
+
+                Scanner choseCharacter = new Scanner(System.in);
+                int answer = choseCharacter.nextInt();
+
+                if (answer == 1) {
+                    player = new Warrior();
+//                    player.warriorCapacity();
+                }else if (answer == 2) {
+                    player = new Wizard();
+                }else if (answer == 3) {
+                    player = new Thief();
+                }
+
                 System.out.println(" ");
                 System.out.println("Player 1 :");
                 player.caracteristics();
@@ -77,8 +96,26 @@ class Menu {
                 stock.add(player.damage);
                 stock.add(player.life);
                 stock.add(player.initiative);
+                player.tellMe();
+
 
                 Character player2 = new Character();
+
+                System.out.println("Chose your character");
+                System.out.println("1 : Warrior");
+                System.out.println("2 : Wizard");
+                System.out.println("3 : Thief");
+
+                Scanner choseCharacter2 = new Scanner(System.in);
+                int answer2 = choseCharacter2.nextInt();
+
+                if (answer2 == 1) {
+                    player2 = new Warrior();
+                }else if (answer2 == 2) {
+                    player2 = new Wizard();
+                }else if (answer2 == 3) {
+                    player2 = new Thief();
+                }
                 System.out.println(" ");
                 System.out.println("Player 2 :");
                 player2.caracteristics();
@@ -86,6 +123,7 @@ class Menu {
                 stock.add(player2.damage);
                 stock.add(player2.life);
                 stock.add(player2.initiative);
+                player2.tellMe();
 
                 System.out.println("Player 1 : " + player);
                 System.out.println("Player 2 : " + player2);
@@ -97,15 +135,15 @@ class Menu {
                 int counter = 1;
 
                 while (turn) {
-                    if(player.life <= 0) {
+                    if (player.life <= 0) {
                         turn = false;
                         System.out.println(" ");
                         System.out.println("The winner is " + player2.name);
-                    }else if(player2.life <= 0) {
+                    } else if (player2.life <= 0) {
                         turn = false;
                         System.out.println(" ");
                         System.out.println("The winner is " + player.name);
-                    }else {
+                    } else {
                         System.out.println(" ");
                         System.out.println("Turn n°" + counter + " :");
                         test.damage(player, player2);
@@ -116,36 +154,16 @@ class Menu {
                 System.out.println(" ");
                 System.out.println("End of the Fight");
 
-                ////////////////////////////////////////////
-
-                System.out.println("Chose your character");
-                System.out.println("1 : Warrior");
-                System.out.println("2 : Wizard");
-                System.out.println("3 : Thief");
-                Scanner choseCharacter = new Scanner(System.in);
-                int answer = choseCharacter.nextInt();
-
-                if (answer == 1) {
-                    Warrior warrior = new Warrior();
-
-                }else if (answer == 2) {
-                    Wizard wizard = new Wizard();
-
-                }else if (answer == 3) {
-                    Thief thief = new Thief();
-
-                }
-
             }else {
                 System.out.println("This mode doesn't exist");
-                condition();
                 tellMe();
+                condition();
             }
 
         }else {
             System.out.println("This feature doesn't exist");
-            condition();
             tellMe();
+            condition();
         }
     }
 }
