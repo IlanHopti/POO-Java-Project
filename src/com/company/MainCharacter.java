@@ -1,22 +1,22 @@
 package com.company;
 
-import java.lang.constant.Constable;
 import java.util.Scanner;
 
 class Character {
 
-    String type;
     String name;
     int damage;
     int life;
     int initiative;
+    String type;
+    int shield;
 
     public Character() {
-        this.type = type;
         this.name = name;
         this.damage = damage;
         this.life = life;
         this.initiative = initiative;
+        this.type = type;
     }
 
     void caracteristics() {
@@ -47,14 +47,18 @@ class Character {
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points";
     }
+
+    public void warriorCapacity() {
+        System.out.println("Enter your shield's points : ");
+        Scanner bouclier = new Scanner(System.in);
+        shield = bouclier.nextInt();
+    }
 }
 
 class Warrior extends Character{
 
-    String type = "Warrior";
-
     public Warrior() {
-        this.type = type;
+        this.type = "Warrior";
     }
 
     void tellMe() {
@@ -64,20 +68,14 @@ class Warrior extends Character{
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
-                " initiative's points and he is a " + type;
-    }
-
-    public String getType() {
-        return type;
+                " initiative's points and he is a Warrior";
     }
 }
 
 class Wizard extends Character{
 
-    String type = "Wizard";
-
     public Wizard() {
-        this.type = type;
+        this.type = "Wizard";
     }
 
     void tellMe() {
@@ -87,34 +85,25 @@ class Wizard extends Character{
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
-                " initiative's points and he is a " + type;
-    }
-
-    public String toString(String type) {
-        return type;
+                " initiative's points and he is a Wizard";
     }
 }
 
 class Thief extends Character{
 
-    String type = "Thief";
-
     public Thief() {
-        this.type = type;
+        this.type = "Thief";
     }
 
     void tellMe() {
         System.out.println("possède une probabilité d'esquiver totalement une attaque, " +
                 "et possède également une probabilité d'infliger un coup critique qui doublera les dégâts de base");
     }
+
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
-                " initiative's points and he is a " + type;
-    }
-
-    public String toString(String type) {
-        return type;
+                " initiative's points and he is a Thief";
     }
 }
 

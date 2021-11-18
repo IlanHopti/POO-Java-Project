@@ -46,16 +46,24 @@ class Menu {
             System.out.println("1 : Warrior");
             System.out.println("2 : Wizard");
             System.out.println("3 : Thief");
+            System.out.println("4 : Classical");
 
             Scanner choseCharacter = new Scanner(System.in);
             int answer = choseCharacter.nextInt();
 
             if (answer == 1) {
                 player = new Warrior();
+                player.warriorCapacity();
             }else if (answer == 2) {
                 player = new Wizard();
             }else if (answer == 3) {
                 player = new Thief();
+            }else if (answer == 4){
+                player = new Character();
+            }else {
+                System.out.println("This character doesn't exist");
+                tellMe();
+                condition();
             }
 
             System.out.println(" ");
@@ -74,6 +82,7 @@ class Menu {
             System.out.println("1 : Warrior");
             System.out.println("2 : Wizard");
             System.out.println("3 : Thief");
+            System.out.println("4 : Classical");
 
             Scanner choseCharacter2 = new Scanner(System.in);
             int answer2 = choseCharacter2.nextInt();
@@ -84,7 +93,14 @@ class Menu {
                 player2 = new Wizard();
             }else if (answer2 == 3) {
                 player2 = new Thief();
+            }else if (answer2 == 4){
+                player2 = new Character();
+            }else {
+                System.out.println("This character doesn't exist");
+                tellMe();
+                condition();
             }
+
             System.out.println(" ");
             System.out.println("Player 2 :");
             player2.caracteristics();
@@ -93,6 +109,7 @@ class Menu {
             stock.add(player2.life);
             stock.add(player2.initiative);
             stock.add(player2.type);
+            System.out.println(stock);
 
             System.out.println("Player 1 : " + player);
             System.out.println("Player 2 : " + player2);
@@ -107,11 +124,11 @@ class Menu {
                 if (player.life <= 0) {
                     turn = false;
                     System.out.println(" ");
-                    System.out.println("The winner is " + player2.name + "who is a ");
+                    System.out.println("The winner is " + player2.name + ", who is a " + player2.type);
                 } else if (player2.life <= 0) {
                     turn = false;
                     System.out.println(" ");
-                    System.out.println("The winner is " + player.name + ", who is a ");
+                    System.out.println("The winner is " + player.name + ", who is a " + player.type);
                 } else {
                     System.out.println(" ");
                     System.out.println("Turn n°" + counter + " :");
