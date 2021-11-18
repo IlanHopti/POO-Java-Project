@@ -90,10 +90,10 @@ class Menu {
 
             if (answer2 == 1) {
                 player2 = new Warrior();
-                player2.warriorCapacity();
+                player.warriorCapacity();
             }else if (answer2 == 2) {
                 player2 = new Wizard();
-                player2.wizardCapacity();
+                player.wizardCapacity();
             }else if (answer2 == 3) {
                 player2 = new Thief();
             }else if (answer2 == 4){
@@ -112,6 +112,7 @@ class Menu {
             stock.add(player2.life);
             stock.add(player2.initiative);
             stock.add(player2.type);
+            System.out.println(stock);
 
             System.out.println("Player 1 : " + player);
             System.out.println("Player 2 : " + player2);
@@ -137,6 +138,8 @@ class Menu {
                     test.damage(player, player2);
                 }
                 counter++;
+                player.magic = player.magic/2;
+//                System.out.println(player.magic);
             }
 
             System.out.println(" ");
