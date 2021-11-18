@@ -37,9 +37,10 @@ class Menu {
         }else if(number == 2) {
             System.out.println("The game continue");
 
-            Fight test = new Fight();
+            Fight fight = new Fight();
 
             Character player = new Character();
+            Devil test = new Devil();
 
             System.out.println(" ");
             System.out.println("Chose your character : ");
@@ -61,6 +62,8 @@ class Menu {
                 player = new Thief();
             }else if (answer == 4){
                 player = new Classical();
+            }else if (answer == 666) {
+                test = new Devil();
             }else {
                 System.out.println("This character doesn't exist");
                 tellMe();
@@ -77,6 +80,7 @@ class Menu {
             stock.add(player.type);
 
             Character player2 = new Character();
+            Devil test2 = new Devil();
 
             System.out.println(" ");
             System.out.println("Chose your character : ");
@@ -98,6 +102,8 @@ class Menu {
                 player2 = new Thief();
             }else if (answer2 == 4){
                 player2 = new Classical();
+            }else if (answer2 == 666) {
+                test2 = new Devil();
             }else {
                 System.out.println("This character doesn't exist");
                 tellMe();
@@ -115,6 +121,8 @@ class Menu {
 
             System.out.println("Player 1 : " + player);
             System.out.println("Player 2 : " + player2);
+            //System.out.println(test.name + " " + test.damage + " " + test.life + " " + test.initiative + " " + test.type);
+            //System.out.println(test2.name + " " + test2.damage + " " + test2.life + " " + test2.initiative + " " + test2.type);
 
             System.out.println(" ");
             System.out.println("Begin of the Fight");
@@ -134,7 +142,7 @@ class Menu {
                 } else {
                     System.out.println(" ");
                     System.out.println("Turn n°" + counter + " :");
-                    test.damage(player, player2);
+                    fight.damage(player, player2);
                 }
                 counter++;
             }

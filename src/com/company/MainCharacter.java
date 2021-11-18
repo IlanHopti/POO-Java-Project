@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Random;
 import java.util.Scanner;
 
 class Character {
@@ -130,10 +131,30 @@ class Classical extends Character{
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Classical Character";
     }
-
-
 }
 
+class Devil {
+
+    String name = "Devil";
+    int damage = 6666;
+    int life = 66666;
+    int initiative = 666;
+    String type = "God";
+
+    public Devil() {
+        this.name = name;
+        this.damage = damage;
+        this.life = life;
+        this.initiative = initiative;
+        this.type = "God";
+    }
+
+    public String toString() {
+        return "You are the " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and your are a God";
+    }
+}
 
 class DefaultCharacter extends Character{
 
