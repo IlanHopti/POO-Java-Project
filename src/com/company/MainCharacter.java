@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.Random;
 
 class Character {
 
@@ -10,7 +11,7 @@ class Character {
     int initiative;
     String type;
     int shield;
-    int spell;
+    int magic;
 
     public Character() {
         this.name = name;
@@ -55,10 +56,10 @@ class Character {
         shield = bouclier.nextInt();
     }
 
-    public void wizardCapacity() {
-        System.out.println("Enter your spell's points : ");
-        Scanner sort = new Scanner(System.in);
-        spell = sort.nextInt();
+    public void wizardCapacity(){
+        System.out.println("Enter your magic damage : ");
+        Scanner magie = new Scanner(System.in);
+        magic = magie.nextInt();
     }
 }
 
@@ -85,16 +86,17 @@ class Wizard extends Character{
         this.type = "Wizard";
     }
 
-    void tellMe(Character player) {
+    void tellMe() {
         System.out.println("inflige des dégâts magiques se rajoutant aux dégâts de base, " +
                 "mais ces dégâts magiques réduisent de moitié après chaque attaque");
     }
-
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Wizard";
     }
+
+
 }
 
 class Thief extends Character{
@@ -130,8 +132,6 @@ class Classical extends Character{
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Classical Character";
     }
-
-
 }
 
 
