@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.Random;
 
 class Character {
 
@@ -10,6 +11,7 @@ class Character {
     int initiative;
     String type;
     int shield;
+    int magic;
 
     public Character() {
         this.name = name;
@@ -53,6 +55,12 @@ class Character {
         Scanner bouclier = new Scanner(System.in);
         shield = bouclier.nextInt();
     }
+
+    public void wizardCapacity(){
+        System.out.println("Enter your magic damage : ");
+        Scanner magie = new Scanner(System.in);
+        magic = magie.nextInt();
+    }
 }
 
 class Warrior extends Character{
@@ -87,6 +95,8 @@ class Wizard extends Character{
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Wizard";
     }
+
+
 }
 
 class Thief extends Character{
@@ -104,6 +114,23 @@ class Thief extends Character{
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Thief";
+    }
+}
+
+class Classical extends Character{
+
+    public Classical() {
+        this.type = "Classical Character";
+    }
+
+    void tellMe() {
+        System.out.println("perso de base");
+    }
+
+    public String toString() {
+        return "You are " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and he is a Classical Character";
     }
 }
 
