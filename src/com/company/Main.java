@@ -56,10 +56,11 @@ class Menu {
                 player.warriorCapacity();
             }else if (answer == 2) {
                 player = new Wizard();
+                player.wizardCapacity();
             }else if (answer == 3) {
                 player = new Thief();
             }else if (answer == 4){
-                player = new Character();
+                player = new Classical();
             }else {
                 System.out.println("This character doesn't exist");
                 tellMe();
@@ -89,12 +90,14 @@ class Menu {
 
             if (answer2 == 1) {
                 player2 = new Warrior();
+                player2.warriorCapacity();
             }else if (answer2 == 2) {
                 player2 = new Wizard();
+                player2.wizardCapacity();
             }else if (answer2 == 3) {
                 player2 = new Thief();
             }else if (answer2 == 4){
-                player2 = new Character();
+                player2 = new Classical();
             }else {
                 System.out.println("This character doesn't exist");
                 tellMe();
@@ -109,7 +112,6 @@ class Menu {
             stock.add(player2.life);
             stock.add(player2.initiative);
             stock.add(player2.type);
-            System.out.println(stock);
 
             System.out.println("Player 1 : " + player);
             System.out.println("Player 2 : " + player2);

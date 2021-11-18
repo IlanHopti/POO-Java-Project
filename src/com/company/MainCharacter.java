@@ -10,6 +10,7 @@ class Character {
     int initiative;
     String type;
     int shield;
+    int spell;
 
     public Character() {
         this.name = name;
@@ -53,6 +54,12 @@ class Character {
         Scanner bouclier = new Scanner(System.in);
         shield = bouclier.nextInt();
     }
+
+    public void wizardCapacity() {
+        System.out.println("Enter your spell's points : ");
+        Scanner sort = new Scanner(System.in);
+        spell = sort.nextInt();
+    }
 }
 
 class Warrior extends Character{
@@ -78,10 +85,11 @@ class Wizard extends Character{
         this.type = "Wizard";
     }
 
-    void tellMe() {
+    void tellMe(Character player) {
         System.out.println("inflige des dégâts magiques se rajoutant aux dégâts de base, " +
                 "mais ces dégâts magiques réduisent de moitié après chaque attaque");
     }
+
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
@@ -105,6 +113,25 @@ class Thief extends Character{
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Thief";
     }
+}
+
+class Classical extends Character{
+
+    public Classical() {
+        this.type = "Classical Character";
+    }
+
+    void tellMe() {
+        System.out.println("perso de base");
+    }
+
+    public String toString() {
+        return "You are " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and he is a Classical Character";
+    }
+
+
 }
 
 
