@@ -8,6 +8,7 @@ class Character {
     int damage;
     int life;
     int initiative;
+    int sheald;
 
     public Character() {
         this.name = name;
@@ -39,6 +40,12 @@ class Character {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points and he has " + initiative + " initiative's points";
     }
+
+    public void warriorCapacity() {
+        System.out.println("Enter your sheald's points : ");
+        Scanner bouclier = new Scanner(System.in);
+        sheald = bouclier.nextInt();
+    }
 }
 
 class DefaultCharacter extends Character{
@@ -61,8 +68,21 @@ class DefaultCharacter extends Character{
     }
 }
 
-class Warrior extends Character{
+class Warrior extends Character {
 
+    public Warrior() {
+        this.sheald = sheald;
+    }
+
+//    void zcapacity() {
+//        System.out.println("Enter your damage's points : ");
+//        Scanner bouclier = new Scanner(System.in);
+//        sheald = bouclier.nextInt();
+//    }
+
+    void tellMe() {
+        System.out.println("possède un bouclier qui réduit les dégâts infligés d'une valeur constante");
+    }
 }
 class Wizard extends Character{
 
