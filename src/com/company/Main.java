@@ -48,7 +48,7 @@ class Menu {
             int number2 = condition2.nextInt();
 
             if (number2 == 1) {
-                Character player = new Character();
+                Warrior player = new Warrior();
                 System.out.println(" ");
                 System.out.println("Player 1 :");
                 player.caracteristics();
@@ -56,6 +56,7 @@ class Menu {
                 stock.add(player.damage);
                 stock.add(player.life);
                 stock.add(player.initiative);
+                player.tellMe();
 
                 DefaultCharacter playerDefault = new DefaultCharacter();
                 stock.add(playerDefault.nameDefault);
@@ -138,14 +139,14 @@ class Menu {
 
             }else {
                 System.out.println("This mode doesn't exist");
-                condition();
                 tellMe();
+                condition();
             }
 
         }else {
             System.out.println("This feature doesn't exist");
-            condition();
             tellMe();
+            condition();
         }
     }
 }

@@ -63,11 +63,23 @@ class DefaultCharacter extends Character{
 
 class Warrior extends Character{
 
+    void tellMe() {
+        System.out.println("possède un bouclier qui réduit les dégâts infligés d'une valeur constante");
+    }
 }
+
 class Wizard extends Character{
 
+    void tellMe() {
+        System.out.println("inflige des dégâts magiques se rajoutant aux dégâts de base, " +
+                "mais ces dégâts magiques réduisent de moitié après chaque attaque");
+    }
 }
 
 class Thief extends Character{
 
+    void tellMe() {
+        System.out.println("possède une probabilité d'esquiver totalement une attaque, " +
+                "et possède également une probabilité d'infliger un coup critique qui doublera les dégâts de base");
+    }
 }
