@@ -8,12 +8,14 @@ class Character {
     int damage;
     int life;
     int initiative;
+    int id;
 
     public Character() {
         this.name = name;
         this.damage = damage;
         this.life = life;
         this.initiative = initiative;
+        this.id = id;
     }
 
     void caracteristics() {
@@ -33,6 +35,10 @@ class Character {
         System.out.println("Enter your initiative's points : ");
         Scanner initiaves = new Scanner(System.in);
         initiative = initiaves.nextInt();
+    }
+
+    void tellMe() {
+        System.out.println("Perso claqué");
     }
 
     public String toString() {
