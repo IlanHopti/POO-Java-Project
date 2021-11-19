@@ -53,7 +53,7 @@ class Menu {
             //Set display character 4
             Character play4 = new Classical();
             System.out.print("4 : ");
-            play4.displayCharacter("Anthony", 100, 150, 15, "Classical");
+            play4.displayCharacter("Antony", 100, 150, 15, "Classical");
 
             //Set variable for display
             int y = 4;
@@ -151,6 +151,7 @@ class Menu {
             } else if (option == 666) {
                 //Select the Easter Egg with information already installed
                 player = new EasterEgg();
+                save.saveCharacter(player);
             }
 
             //Player 2
@@ -249,17 +250,22 @@ class Menu {
                 int counter = 1;
 
                 while (turn) {
-                    if (player.life <= 0) {
-                        //If Player2 win
+                    if (player.life <= 0 && player2.life <= 0) {
+                        //If equality
                         turn = false;
                         System.out.println(" ");
-                        System.out.println("The winner is " + player2.name + ", who is a " + player2.type);
+                        System.out.println("It's perfect equality!");
                     } else if (player2.life <= 0) {
                         //If Player win
                         turn = false;
                         System.out.println(" ");
                         System.out.println("The winner is " + player.name + ", who is a " + player.type);
-                    } else {
+                    } else if (player.life <= 0) {
+                        //If Player2 win
+                        turn = false;
+                        System.out.println(" ");
+                        System.out.println("The winner is " + player2.name + ", who is a " + player2.type);
+                    }else {
                         System.out.println(" ");
                         System.out.println("Turn n°" + counter + " :");
 

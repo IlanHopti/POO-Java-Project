@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Random;
-
 public class Fight {
 
     void damage(Character player, Character player2) {

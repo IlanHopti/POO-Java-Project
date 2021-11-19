@@ -13,6 +13,14 @@ class Character {
     int shield;
     int spell;
 
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
     //Set character to choice in the display
     void displayCharacter(String nameD, int damageD, int lifeD, int initiativeD, String typeD) {
 
@@ -84,6 +92,14 @@ class Character {
 
 class Warrior extends Character{
 
+    public int getShield() {
+        return shield;
+    }
+
+    public void setShield(int shield) {
+        this.shield = shield;
+    }
+
     public void takeDamages(Character a){
         //Set attack's damage
         life = life - a.damage + shield;
@@ -103,6 +119,14 @@ class Warrior extends Character{
 }
 
 class Wizard extends Character{
+
+    public int getSpell() {
+        return spell;
+    }
+
+    public void setSpell(int spell) {
+        this.spell = spell;
+    }
 
     public void takeDamages(Character a){
         //Set attack's damage
