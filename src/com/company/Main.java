@@ -34,7 +34,7 @@ class Menu {
         }else if(number == 2) {
             System.out.println("The game continue");
 
-            Fight test = new Fight();
+            Fight fight = new Fight();
 
             Character player = new Character();
 
@@ -45,7 +45,8 @@ class Menu {
             System.out.println("2 : Wizard");
             System.out.println("3 : Thief");
             System.out.println("4 : Classical");
-            System.out.println("5 : Back");
+            System.out.println(" ");
+            System.out.println("5 : Back to main menu");
 
             Scanner choseCharacter = new Scanner(System.in);
             int answer = choseCharacter.nextInt();
@@ -81,7 +82,8 @@ class Menu {
             System.out.println("2 : Wizard");
             System.out.println("3 : Thief");
             System.out.println("4 : Classical");
-            System.out.println("5 : Back");
+            System.out.println(" ");
+            System.out.println("5 : Back to main menu");
 
             Scanner choseCharacter2 = new Scanner(System.in);
             int answer2 = choseCharacter2.nextInt();
@@ -121,20 +123,17 @@ class Menu {
                 if (player.life <= 0) {
                     turn = false;
                     System.out.println(" ");
-                    System.out.println("The winner is " + player2.name + ", who is a " + player2.type);
+                    System.out.println("The winner is " + player.name + ", who is a " + player.type);
                 } else if (player2.life <= 0) {
                     turn = false;
                     System.out.println(" ");
-                    System.out.println("The winner is " + player.name + ", who is a " + player.type);
+                    System.out.println("The winner is " + player2.name + ", who is a " + player2.type);
                 } else {
                     System.out.println(" ");
                     System.out.println("Turn n°" + counter + " :");
-                    test.damage(player, player2);
+                    fight.getDamage(player, player2);
                 }
                 counter++;
-                player.magic = player.magic/2;
-                player2.magic = player2.magic/2;
-//                System.out.println(player.magic);
             }
 
             System.out.println(" ");
