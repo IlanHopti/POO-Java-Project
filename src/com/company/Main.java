@@ -10,22 +10,19 @@ public class Main {
         System.out.println("Application has started");
 
         Menu begin = new Menu();
-        begin.tellMe();
         begin.condition();
     }
 }
 
 class Menu {
 
-    void tellMe() {
+    void condition() {
         System.out.println(" ");
         System.out.println("Chose option : ");
         System.out.println("1. Quit");
         System.out.println("2. Continue");
-    }
 
-    void condition() {
-        List stock = new ArrayList();
+        List<Character> stock = new ArrayList<>();
         System.out.println(" ");
         System.out.println("Enter the correct number : ");
         Scanner condition = new Scanner(System.in);
@@ -40,9 +37,9 @@ class Menu {
             Fight fight = new Fight();
 
             Character player = new Character();
-            Devil test = new Devil();
 
             System.out.println(" ");
+            System.out.println("Player 1 : ");
             System.out.println("Chose your character : ");
             System.out.println("1 : Warrior");
             System.out.println("2 : Wizard");
@@ -62,27 +59,20 @@ class Menu {
                 player = new Thief();
             }else if (answer == 4){
                 player = new Classical();
-            }else if (answer == 666) {
-                test = new Devil();
             }else {
                 System.out.println("This character doesn't exist");
-                tellMe();
                 condition();
             }
 
             System.out.println(" ");
             System.out.println("Player 1 :");
             player.caracteristics();
-            stock.add(player.name);
-            stock.add(player.damage);
-            stock.add(player.life);
-            stock.add(player.initiative);
-            stock.add(player.type);
+            stock.add(player);
 
             Character player2 = new Character();
-            Devil test2 = new Devil();
 
             System.out.println(" ");
+            System.out.println("Player 2 : ");
             System.out.println("Chose your character : ");
             System.out.println("1 : Warrior");
             System.out.println("2 : Wizard");
@@ -102,27 +92,19 @@ class Menu {
                 player2 = new Thief();
             }else if (answer2 == 4){
                 player2 = new Classical();
-            }else if (answer2 == 666) {
-                test2 = new Devil();
             }else {
                 System.out.println("This character doesn't exist");
-                tellMe();
                 condition();
             }
 
             System.out.println(" ");
             System.out.println("Player 2 :");
             player2.caracteristics();
-            stock.add(player2.name);
-            stock.add(player2.damage);
-            stock.add(player2.life);
-            stock.add(player2.initiative);
-            stock.add(player2.type);
+            stock.add(player2);
 
             System.out.println("Player 1 : " + player);
             System.out.println("Player 2 : " + player2);
-            //System.out.println(test.name + " " + test.damage + " " + test.life + " " + test.initiative + " " + test.type);
-            //System.out.println(test2.name + " " + test2.damage + " " + test2.life + " " + test2.initiative + " " + test2.type);
+            System.out.println(stock);
 
             System.out.println(" ");
             System.out.println("Begin of the Fight");
@@ -145,6 +127,8 @@ class Menu {
                     fight.damage(player, player2);
                 }
                 counter++;
+                player.spell = player.spell / 2;
+                player2.spell = player2.spell / 2;
             }
 
             System.out.println(" ");
@@ -152,7 +136,6 @@ class Menu {
 
         }else {
             System.out.println("This feature doesn't exist");
-            tellMe();
             condition();
         }
     }
