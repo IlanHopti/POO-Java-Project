@@ -13,6 +13,14 @@ class Character {
     int shield;
     int spell;
 
+    //Set character to choice in the display
+    void displayCharacter(String nameD, int damageD, int lifeD, int initiativeD, String typeD) {
+
+        System.out.println("You are " + nameD + ", he inflict " + damageD
+                + " damage's points, he has " + lifeD + " life's points, he has " + initiativeD +
+                " initiative's points and you are a " + typeD);
+    }
+
     //Set controller
     public Character() {
         this.name = name;
@@ -72,11 +80,6 @@ class Character {
 
     }
 
-    public String toString2() {
-        return "Character : " + name + " | Damage : " + damage
-                + " | Heath : " + life + " | Initiative : " + initiative +
-                " | Type : " + type;
-    }
 }
 
 class Warrior extends Character{
@@ -87,6 +90,7 @@ class Warrior extends Character{
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and " + shield + " shield's protection");
     }
 
+    //Set controller
     public Warrior() {
         this.type = "Warrior";
     }
@@ -103,10 +107,11 @@ class Wizard extends Character{
     public void takeDamages(Character a){
         //Set attack's damage
         life = life - a.damage - spell;
-        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and has " + a.spell + " Spell's damage");
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and has " + spell + " Spell's damage");
         spell = spell / 2;
     }
 
+    //Set controller
     public Wizard() {
         this.type = "Wizard";
     }
@@ -120,11 +125,6 @@ class Wizard extends Character{
 
 class Thief extends Character{
 
-    public void takeDamages(Character a){
-        //Set attack's damage
-
-    }
-
     public Thief() {
         this.type = "Thief";
     }
@@ -133,6 +133,39 @@ class Thief extends Character{
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Thief";
+    }
+
+    public void takeDamages(Character a){
+        thiefDamage(a.damage);
+        CriticDamage(a.damage);
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage" );
+
+    }
+    public boolean getDodge() {
+        //Creation of a number between 0 and 1
+        double value = Math.random();
+
+        if (value > 0.5) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public void thiefDamage(int damage) {
+        if (getDodge() == true) {
+            life -= 0;
+        }else {
+            life -= damage;
+        }
+    }
+
+    public void CriticDamage(int damage) {
+        //Player critical attack
+        double val2 = Math.random();
+        if(val2>=0.5){
+            life = life - damage ;
+        }
     }
 }
 
@@ -144,6 +177,7 @@ class Classical extends Character{
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
     }
 
+    //Set controller
     public Classical() {
         this.type = "Classical Character";
     }
@@ -163,7 +197,7 @@ class DefaultCharacter extends Character{
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
     }
 
-
+    //Set controller
     public DefaultCharacter() {
         this.name = "Default";
         this.damage = 10;
@@ -187,6 +221,7 @@ class EasterEgg extends Character{
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
     }
 
+    //Set controller
     public EasterEgg() {
         this.name = "Devil";
         this.damage = 6666;

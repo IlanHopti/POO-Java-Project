@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -37,7 +35,49 @@ class Menu {
             System.out.println(" ");
             System.out.println("Display Character : ");
 
-            System.out.println(save.getCharacters());
+            //Set display character 1
+            Character play1 = new Warrior();
+            System.out.print("1 : ");
+            play1.displayCharacter("Theo", 20, 100, 10, "Warrior");
+
+            //Set display character 2
+            Character play2 = new Wizard();
+            System.out.print("2 : ");
+            play2.displayCharacter("Ilan", 25, 110, 8, "Wizard");
+
+            //Set display character 3
+            Character play3 = new Thief();
+            System.out.print("3 : ");
+            play3.displayCharacter("Vahé", 15, 120, 11, "Thief");
+
+            //Set display character 4
+            Character play4 = new Classical();
+            System.out.print("4 : ");
+            play4.displayCharacter("Anthony", 100, 150, 15, "Classical");
+
+            //Set variable for display
+            int y = 4;
+
+            //Display new Characters
+            for(int i = 0; i < save.getCharacters().size(); i++) {
+                y++;
+                System.out.print(y + " : ");
+                System.out.println(save.getCharacters().get(i).toString());
+            }
+
+            System.out.println(" ");
+            System.out.println("Chose your option :");
+            System.out.println("1. Back to Menu");
+            System.out.println("2. Quit");
+            System.out.println(" ");
+            System.out.println("Enter the correct number : ");
+
+            Scanner option3 = new Scanner(System.in);
+            int newOption = option3.nextInt();
+
+            if(newOption == 1) {
+                condition(save);
+            }
 
         }else if(number == 2) {
             //Create a character
@@ -54,12 +94,16 @@ class Menu {
             System.out.println("1 : Default Character");
             System.out.println("2 : Create Character");
 
+            System.out.println(" ");
+            System.out.println("Enter the correct number : ");
+
             Scanner choseOption = new Scanner(System.in);
             int option = choseOption.nextInt();
 
             if (option == 1) {
                 //Creation of a DefaultCharacter with informations already installed
                 player = new DefaultCharacter();
+                save.saveCharacter(player);
 
             } else if (option == 2) {
                 //Creation of it's own character
@@ -70,6 +114,9 @@ class Menu {
                 System.out.println("2 : Wizard");
                 System.out.println("3 : Thief");
                 System.out.println("4 : Classical");
+
+                System.out.println(" ");
+                System.out.println("Enter the correct number : ");
 
                 Scanner choseCharacter = new Scanner(System.in);
                 int answer = choseCharacter.nextInt();
@@ -116,12 +163,16 @@ class Menu {
             System.out.println("1 : Default Character");
             System.out.println("2 : Create Character");
 
+            System.out.println(" ");
+            System.out.println("Enter the correct number : ");
+
             Scanner choseOption2 = new Scanner(System.in);
             int option2 = choseOption2.nextInt();
 
             if (option2 == 1) {
                 //Creation of a DefaultCharacter with informations already installed
                 player2 = new DefaultCharacter();
+                save.saveCharacter(player2);
 
             } else if (option2 == 2) {
 
@@ -133,6 +184,9 @@ class Menu {
                 System.out.println("2 : Wizard");
                 System.out.println("3 : Thief");
                 System.out.println("4 : Classical");
+
+                System.out.println(" ");
+                System.out.println("Enter the correct number : ");
 
                 Scanner choseCharacter2 = new Scanner(System.in);
                 int answer2 = choseCharacter2.nextInt();
@@ -219,7 +273,21 @@ class Menu {
                 System.out.println(" ");
                 System.out.println("End of the Fight");
 
-                condition(save);
+                System.out.println(" ");
+                System.out.println("Chose your option : ");
+                System.out.println("1 : Back to Menu");
+                System.out.println("2 : Quit");
+
+                System.out.println(" ");
+                System.out.println("Enter the correct number : ");
+
+                Scanner end = new Scanner(System.in);
+                int endFight = end.nextInt();
+
+                if(endFight == 1) {
+                    condition(save);
+                }
+
             }else if (choice == 2) {
                 condition(save);
             }
