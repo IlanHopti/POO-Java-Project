@@ -133,21 +133,23 @@ class Classical extends Character{
 
 class DefaultCharacter extends Character{
 
-    String nameDefault = "AI";
-    int damageDefault = 10;
-    int lifeDefault = 100;
-    int initiativeDefault = 2;
+    public void takeDamages(Character a){
+        life = life - a.damage;
+        System.out.println(name + " has " + life + " pv and received " + damage + " damage");
+    }
+
 
     public DefaultCharacter() {
-        this.nameDefault = nameDefault;
-        this.damageDefault = damageDefault;
-        this.lifeDefault = lifeDefault;
-        this.initiativeDefault = initiativeDefault;
+        this.name = "Default";
+        this.damage = 10;
+        this.life = 100;
+        this.initiative = 2;
+        this.type = "Default Character";
     }
 
     public String toString() {
-        return "The AI player is " + nameDefault + ", he inflict " + damageDefault
-                + " damage's points, he has " + lifeDefault + " life's points, he has " + initiativeDefault +
-                " initiative's points";
+        return "You are " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and he is a Default Character";
     }
 }
