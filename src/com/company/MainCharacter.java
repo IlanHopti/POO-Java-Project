@@ -13,6 +13,14 @@ class Character {
     int shield;
     int spell;
 
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
     //Set character to choice in the display
     void displayCharacter(String nameD, int damageD, int lifeD, int initiativeD, String typeD) {
 
@@ -30,7 +38,7 @@ class Character {
         this.type = type;
     }
 
-    void caracteristics() {
+    void characteristics() {
 
         //Set name
         System.out.println("Enter your name : ");
@@ -39,8 +47,8 @@ class Character {
 
         //Set damage's points
         System.out.println("Enter your damage's points : ");
-        Scanner degats = new Scanner(System.in);
-        damage = degats.nextInt();
+        Scanner Damage = new Scanner(System.in);
+        damage = Damage.nextInt();
 
         //Set life's points
         System.out.println("Enter your life's points : ");
@@ -49,8 +57,8 @@ class Character {
 
         //Set initiative's points
         System.out.println("Enter your initiative's points : ");
-        Scanner initiaves = new Scanner(System.in);
-        initiative = initiaves.nextInt();
+        Scanner initiatives = new Scanner(System.in);
+        initiative = initiatives.nextInt();
     }
 
     public String toString() {
@@ -62,15 +70,15 @@ class Character {
     public void warriorCapacity() {
         //Set shield's value
         System.out.println("Enter your shield's points : ");
-        Scanner bouclier = new Scanner(System.in);
-        shield = bouclier.nextInt();
+        Scanner Shield = new Scanner(System.in);
+        shield = Shield.nextInt();
     }
 
     public void wizardCapacity() {
         //Set spell's value
         System.out.println("Enter your spell's points : ");
-        Scanner sort = new Scanner(System.in);
-        spell = sort.nextInt();
+        Scanner Spell = new Scanner(System.in);
+        spell = Spell.nextInt();
     }
 
     public void takeDamages(Character a){
@@ -83,6 +91,14 @@ class Character {
 }
 
 class Warrior extends Character{
+
+    public int getShield() {
+        return shield;
+    }
+
+    public void setShield(int shield) {
+        this.shield = shield;
+    }
 
     public void takeDamages(Character a){
         //Set attack's damage
@@ -103,6 +119,14 @@ class Warrior extends Character{
 }
 
 class Wizard extends Character{
+
+    public int getSpell() {
+        return spell;
+    }
+
+    public void setSpell(int spell) {
+        this.spell = spell;
+    }
 
     public void takeDamages(Character a){
         //Set attack's damage
@@ -145,7 +169,7 @@ class Thief extends Character{
         //Creation of a number between 0 and 1
         double value = Math.random();
 
-        if (value > 0.5) {
+        if (value >= 0.5) {
             return true;
         }else {
             return false;
