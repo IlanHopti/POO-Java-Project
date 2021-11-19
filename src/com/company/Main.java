@@ -82,6 +82,8 @@ class Menu {
                 System.out.println("Player 1 :");
                 player.caracteristics();
                 stock.add(player);
+            }else if(option == 666) {
+                player = new Devil();
             }
 
             Character player2 = new Character();
@@ -130,6 +132,8 @@ class Menu {
                 System.out.println("Player 2 :");
                 player2.caracteristics();
                 stock.add(player2);
+            }else if(option2 == 666) {
+                player2 = new Devil();
             }
 
             System.out.println("Player 1 : " + player);

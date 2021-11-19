@@ -8,8 +8,8 @@ public class Fight {
 
         if (player.initiative > player2.initiative) {
 
-            player.takeDamages(player2);
             player2.takeDamages(player);
+            player.takeDamages(player2);
 
             /*
                 //Battle turn
@@ -22,8 +22,8 @@ public class Fight {
 
         } else if (player2.initiative > player.initiative) {
 
-            player2.takeDamages(player);
             player.takeDamages(player2);
+            player2.takeDamages(player);
 
             /*
                 //Battle turn

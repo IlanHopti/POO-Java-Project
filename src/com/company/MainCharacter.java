@@ -59,7 +59,7 @@ class Character {
 
     public void takeDamages(Character a){
         life = life - a.damage;
-        System.out.println(name + " has " + life + " pv and received " + damage + " damage");
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
 
     }
 }
@@ -68,7 +68,7 @@ class Warrior extends Character{
 
     public void takeDamages(Character a){
         life = life - a.damage + shield;
-        System.out.println(name + " has " + life + " pv and received " + damage + " damage and " + shield + " shield's protection");
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and " + shield + " shield's protection");
     }
 
     public Warrior() {
@@ -85,8 +85,8 @@ class Warrior extends Character{
 class Wizard extends Character{
 
     public void takeDamages(Character a){
-        life = life - a.damage - spell;
-        System.out.println(name + " has " + life + " pv and received " + damage + " damage and has " + spell + " Spell's damage");
+        life = life - a.damage - a.spell;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and has " + a.spell + " Spell's damage");
     }
 
     public Wizard() {
@@ -135,7 +135,7 @@ class DefaultCharacter extends Character{
 
     public void takeDamages(Character a){
         life = life - a.damage;
-        System.out.println(name + " has " + life + " pv and received " + damage + " damage");
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
     }
 
 
@@ -151,5 +151,27 @@ class DefaultCharacter extends Character{
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Default Character";
+    }
+}
+
+class Devil extends Character{
+
+    public void takeDamages(Character a){
+        life = life - a.damage;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
+    }
+
+    public Devil() {
+        this.name = "Devil";
+        this.damage = 6666;
+        this.life = 66666;
+        this.initiative = 666;
+        this.type = "GOD";
+    }
+
+    public String toString() {
+        return "You are the " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and he is a GOD";
     }
 }
