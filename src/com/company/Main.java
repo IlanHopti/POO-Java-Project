@@ -143,7 +143,7 @@ class Menu {
 
                 System.out.println(" ");
                 System.out.println("Player 1 :");
-                player.caracteristics();
+                player.characteristics();
                 save.saveCharacter(player);
                 System.out.println(save.getCharacters().size());
                 //stock.add(player);
@@ -151,7 +151,6 @@ class Menu {
             } else if (option == 666) {
                 //Select the Easter Egg with information already installed
                 player = new EasterEgg();
-                save.saveCharacter(player);
             }
 
             //Player 2
@@ -213,7 +212,7 @@ class Menu {
                 }
                 System.out.println(" ");
                 System.out.println("Player 2 :");
-                player2.caracteristics();
+                player2.characteristics();
                 save.saveCharacter(player2);
                 //stock.add(player2);
 
