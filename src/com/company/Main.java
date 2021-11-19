@@ -10,21 +10,18 @@ public class Main {
         System.out.println("Application has started");
 
         Menu begin = new Menu();
-        begin.tellMe();
         begin.condition();
     }
 }
 
 class Menu {
 
-    void tellMe() {
+    void condition() {
         System.out.println(" ");
         System.out.println("Chose option : ");
         System.out.println("1. Quit");
         System.out.println("2. Continue");
-    }
 
-    void condition() {
         List stock = new ArrayList();
         System.out.println(" ");
         System.out.println("Enter the correct number : ");
@@ -42,11 +39,13 @@ class Menu {
             Character player = new Character();
 
             System.out.println(" ");
+            System.out.println("Player 1:");
             System.out.println("Chose your character : ");
             System.out.println("1 : Warrior");
             System.out.println("2 : Wizard");
             System.out.println("3 : Thief");
             System.out.println("4 : Classical");
+            System.out.println("5 : Back");
 
             Scanner choseCharacter = new Scanner(System.in);
             int answer = choseCharacter.nextInt();
@@ -61,57 +60,52 @@ class Menu {
                 player = new Thief();
             }else if (answer == 4){
                 player = new Classical();
+            }else if (answer == 5) {
+                condition();    //back to main menu
             }else {
                 System.out.println("This character doesn't exist");
-                tellMe();
                 condition();
             }
 
-            System.out.println(" ");
-            System.out.println("Player 1 :");
+            //Player 1
             player.caracteristics();
-            stock.add(player.name);
-            stock.add(player.damage);
-            stock.add(player.life);
-            stock.add(player.initiative);
-            stock.add(player.type);
+            stock.add(player);
 
+            // Player 2 character
             Character player2 = new Character();
 
             System.out.println(" ");
+            System.out.println("Player 2:");
             System.out.println("Chose your character : ");
             System.out.println("1 : Warrior");
             System.out.println("2 : Wizard");
             System.out.println("3 : Thief");
             System.out.println("4 : Classical");
+            System.out.println("5 : Back");
 
             Scanner choseCharacter2 = new Scanner(System.in);
             int answer2 = choseCharacter2.nextInt();
 
             if (answer2 == 1) {
                 player2 = new Warrior();
-                player.warriorCapacity();
+                player2.warriorCapacity();
             }else if (answer2 == 2) {
                 player2 = new Wizard();
-                player.wizardCapacity();
+                player2.wizardCapacity();
             }else if (answer2 == 3) {
                 player2 = new Thief();
             }else if (answer2 == 4){
                 player2 = new Classical();
+            }else if (answer2 == 5) {
+                condition();    //back to main menu
             }else {
                 System.out.println("This character doesn't exist");
-                tellMe();
                 condition();
             }
 
-            System.out.println(" ");
-            System.out.println("Player 2 :");
+            // Player 2
             player2.caracteristics();
-            stock.add(player2.name);
-            stock.add(player2.damage);
-            stock.add(player2.life);
-            stock.add(player2.initiative);
-            stock.add(player2.type);
+            stock.add(player2);
             System.out.println(stock);
 
             System.out.println("Player 1 : " + player);
@@ -139,6 +133,7 @@ class Menu {
                 }
                 counter++;
                 player.magic = player.magic/2;
+                player2.magic = player2.magic/2;
 //                System.out.println(player.magic);
             }
 
@@ -147,7 +142,6 @@ class Menu {
 
         }else {
             System.out.println("This feature doesn't exist");
-            tellMe();
             condition();
         }
     }

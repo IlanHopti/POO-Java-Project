@@ -13,6 +13,14 @@ class Character {
     int shield;
     int magic;
 
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
     public Character() {
         this.name = name;
         this.damage = damage;
@@ -41,7 +49,7 @@ class Character {
     }
 
     void tellMe() {
-        System.out.println("Perso claqué");
+        System.out.println(" ");
     }
 
     public String toString() {
@@ -76,7 +84,7 @@ class Warrior extends Character{
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
-                " initiative's points and he is a Warrior";
+                " initiative's points he has " + shield + " shield points and he is a Warrior";
     }
 }
 
@@ -93,7 +101,7 @@ class Wizard extends Character{
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
-                " initiative's points and he is a Wizard";
+                " initiative's points he has " + magic + "damage and he is a Wizard";
     }
 
 
@@ -108,6 +116,7 @@ class Thief extends Character{
     void tellMe() {
         System.out.println("possède une probabilité d'esquiver totalement une attaque, " +
                 "et possède également une probabilité d'infliger un coup critique qui doublera les dégâts de base");
+
     }
 
     public String toString() {
