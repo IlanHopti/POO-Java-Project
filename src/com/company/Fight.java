@@ -11,28 +11,23 @@ public class Fight {
             player2.takeDamages(player);
             player.takeDamages(player2);
 
-            /*
-                //Battle turn
-                player2.life = player2.life - player.damage + player2.shield - player.spell;
-                player.life = player.life - player2.damage + player.shield - player2.spell;
 
-                System.out.println(player2.name + " has " + player2.life + " pv and received " + (player.damage+player.spell) + " damage");
-                System.out.println(player.name + " has " + player.life + " pv and received " + (player2.damage+player2.spell) + " damage");
-            */
-
-        } else if (player2.initiative > player.initiative) {
+        }else if (player2.initiative > player.initiative) {
 
             player.takeDamages(player2);
             player2.takeDamages(player);
 
-            /*
-                //Battle turn
-                player2.life = player2.life - player.damage + player2.shield - player.spell;
-                player.life = player.life - player2.damage + player.shield - player2.spell;
+        }else if (player2.initiative == player.initiative) {
 
-                System.out.println(player2.name + " has " + player2.life + " pv and received " + (player.damage+player.spell) + " damage");
-                System.out.println(player.name + " has " + player.life + " pv and received " + (player2.damage+player2.spell) + " damage");
-            */
+            double number = Math.random();
+
+            if(number >= 0.5) {
+                player2.takeDamages(player);
+                player.takeDamages(player2);
+            }else {
+                player.takeDamages(player2);
+                player2.takeDamages(player);
+            }
         }
     }
 }
@@ -117,4 +112,11 @@ public class Fight {
 
             }else {
 
- */
+
+                //Battle turn
+                player2.life = player2.life - player.damage + player2.shield - player.spell;
+                player.life = player.life - player2.damage + player.shield - player2.spell;
+
+                System.out.println(player2.name + " has " + player2.life + " pv and received " + (player.damage+player.spell) + " damage");
+                System.out.println(player.name + " has " + player.life + " pv and received " + (player2.damage+player2.spell) + " damage");
+            */

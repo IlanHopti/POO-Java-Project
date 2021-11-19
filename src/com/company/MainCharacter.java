@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 class Character {
 
+    //Set variables
     String name;
     int damage;
     int life;
@@ -12,6 +13,7 @@ class Character {
     int shield;
     int spell;
 
+    //Set controller
     public Character() {
         this.name = name;
         this.damage = damage;
@@ -22,18 +24,22 @@ class Character {
 
     void caracteristics() {
 
+        //Set name
         System.out.println("Enter your name : ");
         Scanner nom = new Scanner(System.in);
         name = nom.nextLine();
 
+        //Set damage's points
         System.out.println("Enter your damage's points : ");
         Scanner degats = new Scanner(System.in);
         damage = degats.nextInt();
 
+        //Set life's points
         System.out.println("Enter your life's points : ");
         Scanner vie = new Scanner(System.in);
         life = vie.nextInt();
 
+        //Set initiative's points
         System.out.println("Enter your initiative's points : ");
         Scanner initiaves = new Scanner(System.in);
         initiative = initiaves.nextInt();
@@ -46,27 +52,37 @@ class Character {
     }
 
     public void warriorCapacity() {
+        //Set shield's value
         System.out.println("Enter your shield's points : ");
         Scanner bouclier = new Scanner(System.in);
         shield = bouclier.nextInt();
     }
 
     public void wizardCapacity() {
+        //Set spell's value
         System.out.println("Enter your spell's points : ");
         Scanner sort = new Scanner(System.in);
         spell = sort.nextInt();
     }
 
     public void takeDamages(Character a){
+        //Set attack's damage
         life = life - a.damage;
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
 
+    }
+
+    public String toString2() {
+        return "Character : " + name + " | Damage : " + damage
+                + " | Heath : " + life + " | Initiative : " + initiative +
+                " | Type : " + type;
     }
 }
 
 class Warrior extends Character{
 
     public void takeDamages(Character a){
+        //Set attack's damage
         life = life - a.damage + shield;
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and " + shield + " shield's protection");
     }
@@ -85,8 +101,10 @@ class Warrior extends Character{
 class Wizard extends Character{
 
     public void takeDamages(Character a){
+        //Set attack's damage
         life = life - a.damage - spell;
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and has " + a.spell + " Spell's damage");
+        spell = spell / 2;
     }
 
     public Wizard() {
@@ -103,7 +121,8 @@ class Wizard extends Character{
 class Thief extends Character{
 
     public void takeDamages(Character a){
-       //Mettre voleur valeur
+        //Set attack's damage
+
     }
 
     public Thief() {
@@ -119,10 +138,15 @@ class Thief extends Character{
 
 class Classical extends Character{
 
+    public void takeDamages(Character a){
+        //Set attack's damage
+        life = life - a.damage;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
+    }
+
     public Classical() {
         this.type = "Classical Character";
     }
-
 
     public String toString() {
         return "You are " + name + ", he inflict " + damage
@@ -134,6 +158,7 @@ class Classical extends Character{
 class DefaultCharacter extends Character{
 
     public void takeDamages(Character a){
+        //Set attack's damage
         life = life - a.damage;
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
     }
@@ -154,14 +179,15 @@ class DefaultCharacter extends Character{
     }
 }
 
-class Devil extends Character{
+class EasterEgg extends Character{
 
     public void takeDamages(Character a){
+        //Set attack's damage
         life = life - a.damage;
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
     }
 
-    public Devil() {
+    public EasterEgg() {
         this.name = "Devil";
         this.damage = 6666;
         this.life = 66666;
