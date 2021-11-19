@@ -85,7 +85,7 @@ class Warrior extends Character{
 class Wizard extends Character{
 
     public void takeDamages(Character a){
-        life = life - a.damage - a.spell;
+        life = life - a.damage - spell;
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and has " + a.spell + " Spell's damage");
     }
 
