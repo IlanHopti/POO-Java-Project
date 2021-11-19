@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Scanner;
-import java.util.Random;
 
 class Character {
 
@@ -11,7 +10,7 @@ class Character {
     int initiative;
     String type;
     int shield;
-    int magic;
+    int spell;
 
     public Character() {
         this.name = name;
@@ -40,10 +39,6 @@ class Character {
         initiative = initiaves.nextInt();
     }
 
-    void tellMe() {
-        System.out.println("Perso claqué");
-    }
-
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
@@ -56,21 +51,28 @@ class Character {
         shield = bouclier.nextInt();
     }
 
-    public void wizardCapacity(){
-        System.out.println("Enter your magic damage : ");
-        Scanner magie = new Scanner(System.in);
-        magic = magie.nextInt();
+    public void wizardCapacity() {
+        System.out.println("Enter your spell's points : ");
+        Scanner sort = new Scanner(System.in);
+        spell = sort.nextInt();
+    }
+
+    public void takeDamages(Character a){
+        life = life - a.damage;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
+
     }
 }
 
 class Warrior extends Character{
 
-    public Warrior() {
-        this.type = "Warrior";
+    public void takeDamages(Character a){
+        life = life - a.damage + shield;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and " + shield + " shield's protection");
     }
 
-    void tellMe() {
-        System.out.println("possède un bouclier qui réduit les dégâts infligés d'une valeur constante");
+    public Warrior() {
+        this.type = "Warrior";
     }
 
     public String toString() {
@@ -82,32 +84,30 @@ class Warrior extends Character{
 
 class Wizard extends Character{
 
+    public void takeDamages(Character a){
+        life = life - a.damage - spell;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage and has " + a.spell + " Spell's damage");
+    }
+
     public Wizard() {
         this.type = "Wizard";
     }
 
-    void tellMe() {
-        System.out.println("inflige des dégâts magiques se rajoutant aux dégâts de base, " +
-                "mais ces dégâts magiques réduisent de moitié après chaque attaque");
-    }
     public String toString() {
         return "You are " + name + ", he inflict " + damage
                 + " damage's points, he has " + life + " life's points, he has " + initiative +
                 " initiative's points and he is a Wizard";
     }
-
-
 }
 
 class Thief extends Character{
 
-    public Thief() {
-        this.type = "Thief";
+    public void takeDamages(Character a){
+       //Mettre voleur valeur
     }
 
-    void tellMe() {
-        System.out.println("possède une probabilité d'esquiver totalement une attaque, " +
-                "et possède également une probabilité d'infliger un coup critique qui doublera les dégâts de base");
+    public Thief() {
+        this.type = "Thief";
     }
 
     public String toString() {
@@ -123,9 +123,6 @@ class Classical extends Character{
         this.type = "Classical Character";
     }
 
-    void tellMe() {
-        System.out.println("perso de base");
-    }
 
     public String toString() {
         return "You are " + name + ", he inflict " + damage
@@ -134,24 +131,47 @@ class Classical extends Character{
     }
 }
 
-
 class DefaultCharacter extends Character{
 
-    String nameDefault = "AI";
-    int damageDefault = 10;
-    int lifeDefault = 100;
-    int initiativeDefault = 2;
+    public void takeDamages(Character a){
+        life = life - a.damage;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
+    }
+
 
     public DefaultCharacter() {
-        this.nameDefault = nameDefault;
-        this.damageDefault = damageDefault;
-        this.lifeDefault = lifeDefault;
-        this.initiativeDefault = initiativeDefault;
+        this.name = "Default";
+        this.damage = 10;
+        this.life = 100;
+        this.initiative = 2;
+        this.type = "Default Character";
     }
 
     public String toString() {
-        return "The AI player is " + nameDefault + ", he inflict " + damageDefault
-                + " damage's points, he has " + lifeDefault + " life's points, he has " + initiativeDefault +
-                " initiative's points";
+        return "You are " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and he is a Default Character";
+    }
+}
+
+class Devil extends Character{
+
+    public void takeDamages(Character a){
+        life = life - a.damage;
+        System.out.println(name + " has " + life + " pv and received " + a.damage + " damage");
+    }
+
+    public Devil() {
+        this.name = "Devil";
+        this.damage = 6666;
+        this.life = 66666;
+        this.initiative = 666;
+        this.type = "GOD";
+    }
+
+    public String toString() {
+        return "You are the " + name + ", he inflict " + damage
+                + " damage's points, he has " + life + " life's points, he has " + initiative +
+                " initiative's points and he is a GOD";
     }
 }
